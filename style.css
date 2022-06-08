@@ -1,0 +1,23 @@
+body {
+  min-height: 3000px;
+}
+.jumbotron {
+  padding-top: 9rem;
+  background-color: #8da9c4;
+}
+
+#project {
+  background-color: #8da9c4;
+}
+
+.navbar-dark {
+  background-color: #0b2545;
+}
+
+footer {
+  background-color: #0b2545;
+}
+
+section {
+  padding-top: 7rem;
+}
