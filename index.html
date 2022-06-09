@@ -13,6 +13,7 @@
 
     <!-- my css -->
     <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <title>Portfolio - Cleanid</title>
   </head>
@@ -128,14 +129,10 @@
               <strong>Hatur Nuhun!</strong> Pesan anda sudah kami terima.
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            <div class="alert alert-danger alert-dismissible fade show d-none my-alert2" role="alert">
-              <strong>Punten!</strong> Nami na tong kosong!.
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
             <form name="contact-form">
               <div class="mb-2">
-                <label for="name"  class="form-label">Nama Lengkap</label>
-                <input type="name" class="form-control" id="name" aria-describedby="name" name="nama">
+                <label for="name" class="form-label ">Nama Lengkap</label>
+                <input type="name" class="form-control" id="namess" aria-describedby="name" name="nama">
               </div>
               <div class="mb-2">
                 <label for="email" class="form-label">Email</label>
@@ -166,7 +163,6 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbzf4Z-TfP77Cj_jU-qwAsAqRs0-xRrCpI3_9k1D2ROc4pqXZomY2C2-t4NY2BkVX9mN/exec';
@@ -174,11 +170,11 @@
   const btnKirim = document.querySelector('.btn-kirim');
   const btnLoading = document.querySelector('.btn-loading');
   const alertku = document.querySelector('.my-alert');
-  const alertError = document.querySelector('.my-alert2');
-  const names = document.getElementsByName('nama');
+  const names = document.getElementById('namesss');
+
+
   form.addEventListener('submit', e => {
-    if(form.names != null){
-      btnLoading.classList.toggle('d-none');    
+    btnLoading.classList.toggle('d-none');    
     btnKirim.classList.toggle('d-none');    
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)
@@ -192,17 +188,11 @@
 
       })
       .catch(error => console.error('Error!', error.message))
-    }
-   else{
-    e.preventDefault()
-
-    alertError.classList.toggle('d-none');
-
-   }
   })
 
+    
 
-  
+
 </script>
   </body>
 </html>
